@@ -1,0 +1,39 @@
+
+/* Slideshow Container */
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+/* Setiap Slide */
+.slide {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+/* Gambar di Slide */
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Animasi untuk Pergantian Gambar */
+@keyframes fade {
+    0%, 100% { opacity: 0; }
+    25%, 75% { opacity: 1; }
+}
+
+.table-wrapper {
+    max-height: 600px;
+    overflow-y: auto;
+    width: 100%;        /* Mengisi lebar kontainer */
+    max-width: 100%;   /* Lebar maksimum 800px */
+}
+
+

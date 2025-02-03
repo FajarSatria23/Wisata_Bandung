@@ -1,0 +1,18 @@
+<script>
+    console.log("Latitude: ", <?php echo $latitude; ?>);
+    console.log("Longitude: ", <?php echo $longitude; ?>);
+
+    mapboxgl.accessToken = 'pk.eyJ1IjoiZGltYXMxMDEyMjI5NSIsImEiOiJjbTZvb282engwemd4MnFzaG1saWhleGQxIn0.6vLp-1AWXUlj7MaWSHQ6og'; // Ganti dengan token akses Mapbox Anda
+    const map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11',
+        center: [<?php echo $longitude; ?>, <?php echo $latitude; ?>], // Koordinat awal
+        zoom: 12
+    });
+
+    // Menambahkan marker untuk lokasi pengguna
+    new mapboxgl.Marker({ color: 'red' })
+        .setLngLat([<?php echo $longitude; ?>, <?php echo $latitude; ?>])
+        .setPopup(new mapboxgl.Popup().setHTML("<h3>Lokasi Anda</h3>"))
+        .addTo(map);
+</script>
